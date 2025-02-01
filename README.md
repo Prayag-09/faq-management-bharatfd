@@ -90,9 +90,12 @@ Ensure the following software is installed on your machine:
 
    ```env
    MONGO=mongodb+srv://<your-db-credentials>
-   REDIS_URL=redis://localhost:6379
    TRANSLATE_API_KEY=your-google-translate-api-key
    PORT=3000
+   REDIS_USERNAME=default
+   REDIS_PASSWORD=<redis-password>
+   REDIS_HOST=<redis-host>
+   REDIS_PORT=<redis-port>
    ```
 
 5. Run the server:
