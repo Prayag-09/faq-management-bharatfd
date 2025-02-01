@@ -72,9 +72,13 @@ The **Backend** of the **FAQ Management System** is built using **Node.js** (Exp
 
    ```env
    MONGO=mongodb+srv://<your-db-credentials>
-   REDIS_URL=redis://localhost:6379
+   // REDIS_URL=redis://<redis> or <localhost>:6379 // Only if you are using docker
    TRANSLATE_API_KEY=your-google-translate-api-key
    PORT=3000
+   REDIS_USERNAME=default
+   REDIS_PASSWORD=
+   REDIS_HOST=
+   REDIS_PORT=
    ```
 
 4. **Run the server:**
