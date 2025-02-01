@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import Quill from 'quill';
 import 'quill/dist/quill.snow.css';
-import supportedLanguages from '../config/lang'; // Import language options
+import supportedLanguages from '../config/lang';
 
 const AdminPanel = () => {
-	const quillRef = useRef(null); // Prevent duplicate Quill instances
-	const editorContainerRef = useRef(null); // Reference for editor div
+	const quillRef = useRef(null);
+	const editorContainerRef = useRef(null);
 	const [faqs, setFaqs] = useState([]);
 	const [question, setQuestion] = useState('');
 	const [selectedLanguage, setSelectedLanguage] = useState('en');
@@ -13,7 +13,6 @@ const AdminPanel = () => {
 	const [message, setMessage] = useState(null);
 
 	useEffect(() => {
-		// Initialize Quill only once
 		if (!quillRef.current && editorContainerRef.current) {
 			quillRef.current = new Quill(editorContainerRef.current, {
 				theme: 'snow',
@@ -89,7 +88,6 @@ const AdminPanel = () => {
 				Admin Panel - FAQ Management
 			</h1>
 
-			{/* Language Selector */}
 			<div className='mb-4 flex justify-between items-center'>
 				<label className='font-semibold'>Select Language:</label>
 				<select
@@ -104,7 +102,6 @@ const AdminPanel = () => {
 				</select>
 			</div>
 
-			{/* FAQ Input */}
 			<div className='mb-4'>
 				<label className='block font-semibold mb-2'>Question:</label>
 				<input
@@ -135,7 +132,6 @@ const AdminPanel = () => {
 				)}
 			</button>
 
-			{/* Message Display */}
 			{message && (
 				<div
 					className={`mt-4 p-3 text-center rounded-md ${
@@ -147,7 +143,6 @@ const AdminPanel = () => {
 				</div>
 			)}
 
-			{/* FAQs Table */}
 			<div className='overflow-x-auto mt-6'>
 				<table className='w-full border-collapse border border-gray-200'>
 					<thead>
