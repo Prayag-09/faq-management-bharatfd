@@ -14,6 +14,11 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+    environment:
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      REDIS_USERNAME: default
+      REDIS_PASSWORD: ${REDIS_PASSWORD}
 
   frontend:
     build:
