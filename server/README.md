@@ -6,17 +6,17 @@ The **Backend** of the **FAQ Management System** is built using **Node.js** (Exp
 
 ## Table of Contents 📚
 
-- [Features](#features-)
-- [Tech Stack](#tech-stack-)
-- [Installation](#installation-)
-  - [Backend Setup](#backend-setup-)
-- [API Endpoints](#api-endpoints-)
-  - [FAQ Management](#faq-management-)
-  - [Translation API](#translation-api-)
-- [Development](#development-)
-  - [Running Tests](#running-tests-)
-  - [Git Commit Messages](#git-commit-messages-)
-- [Contributing](#contributing-)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+  - [Backend Setup](#backend-setup)
+- [API Endpoints](#api-endpoints)
+  - [FAQ Management](#faq-management)
+  - [Translation API](#translation-api)
+- [Development](#development)
+  - [Running Tests](#running-tests)
+  - [Git Commit Messages](#git-commit-messages)
+- [Contributing](#contributing)
 
 ---
 

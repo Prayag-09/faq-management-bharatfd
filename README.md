@@ -6,20 +6,21 @@ A **full-stack multilingual FAQ management system** built with **Node.js** (Expr
 
 ## Table of Contents 📚
 
-- [Features](#features-)
-- [Tech Stack](#tech-stack-)
-- [Installation](#installation-)
-  - [Prerequisites](#prerequisites-)
-  - [Backend Setup](#backend-setup-)
-  - [Frontend Setup](#frontend-setup-)
-  - [Running with Docker](#running-with-docker-)
-- [Usage](#usage-)
-  - [API Endpoints](#api-endpoints-)
-  - [Admin Panel](#admin-panel-)
-- [Development](#development-)
-  - [Running Tests](#running-tests-)
-  - [Git Commit Messages](#git-commit-messages-)
-- [Contributing](#contributing-)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+  - [Prerequisites](#prerequisites)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Running with Docker](#running-with-docker)
+- [Usage](#usage)
+  - [API Endpoints](#api-endpoints)
+  - [Admin Panel](#admin-panel)
+- [Development](#development)
+  - [Running Tests](#running-tests)
+  - [Git Commit Messages](#git-commit-messages)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
 
 ---
 

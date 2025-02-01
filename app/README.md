@@ -6,16 +6,16 @@ The **Frontend** of the **FAQ Management System** is built using **React**, **Qu
 
 ## Table of Contents 📚
 
-- [Features](#features-)
-- [Tech Stack](#tech-stack-)
-- [Installation](#installation-)
-  - [Frontend Setup](#frontend-setup-)
-- [Usage](#usage-)
-  - [Admin Panel](#admin-panel-)
-- [Development](#development-)
-  - [Running Tests](#running-tests-)
-  - [Git Commit Messages](#git-commit-messages-)
-- [Contributing](#contributing-)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+  - [Frontend Setup](#frontend-setup)
+- [Usage](#usage)
+  - [Admin Panel](#admin-panel)
+- [Development](#development)
+  - [Running Tests](#running-tests)
+  - [Git Commit Messages](#git-commit-messages)
+- [Contributing](#contributing)
 
 ---
 
@@ -50,11 +50,11 @@ The **Frontend** of the **FAQ Management System** is built using **React**, **Qu
    cd faq-management-bharatfd/app
    ```
 
-2.  **Install dependencies:**
+2. **Install dependencies:**
 
-   ```bash
-   npm install
-   ```
+```bash
+npm install
+```
 
 3. **Start the frontend:**
 
@@ -114,6 +114,7 @@ We welcome contributions! To contribute:
 5. Create a pull request.
 
 ---
+
 ## Acknowledgments 🙏
 
 - **React** for building a dynamic and responsive frontend.
