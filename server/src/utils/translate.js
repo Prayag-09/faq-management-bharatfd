@@ -1,5 +1,8 @@
 import translate from 'translate';
 import { createClient } from 'redis';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 translate.engine = 'google';
 translate.key = process.env.TRANSLATE_API_KEY;
@@ -9,12 +12,15 @@ if (!process.env.TRANSLATE_API_KEY) {
 }
 
 const redisClient = createClient({
-	url: process.env.REDIS_URL,
+	username: process.env.REDIS_USERNAME,
+	password: process.env.REDIS_PASSWORD,
+	socket: {
+		host: process.env.REDIS_HOST,
+		port: process.env.REDIS_PORT,
+	},
 });
 
-redisClient.on('error', (err) => {
-	console.error('Redis Client Error:', err);
-});
+redisClient.on('error', (err) => console.error('Redis Client Error:', err));
 
 const connectRedis = async () => {
 	try {
@@ -26,8 +32,6 @@ const connectRedis = async () => {
 };
 
 connectRedis();
-
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const translateText = async (
 	text,
@@ -58,19 +62,19 @@ const translateText = async (
 		return translation;
 	} catch (error) {
 		if (retries > 0) {
-			await sleep(delay);
+			console.error(`Error translating text: ${error.message}. Retrying...`);
+			await new Promise((resolve) => setTimeout(resolve, delay));
 			return translateText(text, targetLanguage, retries - 1, delay);
+		} else {
+			console.error('Max retries reached. Returning original text.');
+			return text;
 		}
-
-		return text;
 	}
 };
 
 const handleShutdown = async () => {
 	try {
-		if (redisClient.isOpen) {
-			await redisClient.quit();
-		}
+		await redisClient.quit();
 	} catch (err) {
 		console.error('Error during Redis shutdown:', err);
 	}
