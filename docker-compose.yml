@@ -6,7 +6,7 @@ services:
       context: ./server
       dockerfile: Dockerfile.server
     ports:
-      - '50001:3000'
+      - '3000:3000'
     env_file:
       - ./server/.env
     depends_on:
@@ -20,7 +20,7 @@ services:
       context: ./app
       dockerfile: Dockerfile.app
     ports:
-      - '50002:80'
+      - '5173:80'
     depends_on:
       - backend
 
@@ -28,7 +28,7 @@ services:
     image: mongo:latest
     restart: always
     ports:
-      - '27018:27017'
+      - '27017:27017'
     volumes:
       - mongo_data:/data/db
     healthcheck:
