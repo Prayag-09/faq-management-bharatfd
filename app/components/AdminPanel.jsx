@@ -33,8 +33,12 @@ const AdminPanel = () => {
 	const fetchFAQs = async (language = 'en') => {
 		try {
 			const response = await fetch(
-				`http://localhost:3000/api/faqs?lang=${language}`
+				`https://faq-management-bharatfd.onrender.com/api/faqs?lang=${language}`
 			);
+			// If using Docker
+			// const response = await fetch(
+			// 	`http://localhost:3000/api/faqs?lang=${language}`
+			// );
 			const data = await response.json();
 			setFaqs(data);
 		} catch (error) {
@@ -53,15 +57,30 @@ const AdminPanel = () => {
 
 		setLoading(true);
 		try {
-			const response = await fetch('http://localhost:3000/api/faqs', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					question,
-					answer: quillRef.current.root.innerHTML.trim(),
-					lang: selectedLanguage,
-				}),
-			});
+			const response = await fetch(
+				'https://faq-management-bharatfd.onrender.com/api/faqs',
+				{
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({
+						question,
+						answer: quillRef.current.root.innerHTML.trim(),
+						lang: selectedLanguage,
+					}),
+				}
+			);
+
+			// If using Docker
+			// try {
+			// 	const response = await fetch('http://localhost:3000/api/faqs', {
+			// 		method: 'POST',
+			// 		headers: { 'Content-Type': 'application/json' },
+			// 		body: JSON.stringify({
+			// 			question,
+			// 			answer: quillRef.current.root.innerHTML.trim(),
+			// 			lang: selectedLanguage,
+			// 		}),
+			// 	});
 
 			if (response.ok) {
 				setMessage({ text: 'FAQ added successfully!', type: 'success' });
